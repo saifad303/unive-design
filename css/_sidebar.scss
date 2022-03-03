@@ -1,0 +1,200 @@
+@use "./colors" as *;
+@mixin sidebar {
+  .sidebar {
+    background-color: $primary;
+    //sidebar container start
+    .side-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow-y: auto;
+      //logo
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 4rem;
+        gap: 1.2rem;
+        img {
+          width: 2.7rem;
+          margin-bottom: 0.7rem;
+        }
+        p {
+          color: $text-gray;
+          font-size: 3rem;
+          font-family: "MuseoModerno", cursive;
+        }
+      }
+      @media screen and (max-width: 1300px) {
+        .logo {
+          p {
+            font-size: 0;
+          }
+        }
+      }
+      @media screen and (max-width: 570px) {
+        .logo {
+          display: inline-block;
+          margin-top: 0;
+          text-align: center;
+          img {
+            margin-bottom: 0;
+            padding: 2.4rem 2.4rem;
+          }
+        }
+      }
+      // logo end
+
+      //sidebar items start
+      .bar-items {
+        text-align: center;
+        .menu {
+          margin-top: 3rem;
+          display: inline-block;
+          width: 50%;
+          ///items start
+          .item {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+
+            .icon {
+              color: $lightPurple;
+              font-size: 1.7rem;
+            }
+            span {
+              transition: all linear 0.1s;
+              color: $lightPurple;
+              font-size: 1.6rem;
+            }
+            ///hovers
+            &:hover i {
+              color: rgba(192, 190, 255, 0.2);
+            }
+            &:hover span {
+              color: white;
+              margin-left: 4px;
+            }
+            &:hover {
+            }
+          }
+
+          @media screen and (max-width: 1300px) {
+            .item {
+              justify-content: center;
+              padding-bottom: 1.5rem;
+              padding-top: 1.5rem;
+              margin-top: 1.2rem;
+              margin-bottom: 1.2rem;
+              span {
+                font-size: 0;
+              }
+              .icon {
+                color: $lightPurple;
+                font-size: 2.5rem;
+              }
+            }
+          }
+          ///items end
+
+          //active item start
+          .active-item {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+            span {
+              transition: all linear 0.1s;
+              color: $lightPurple;
+              font-size: 1.6rem;
+              color: white;
+            }
+            .icon {
+              color: rgba(192, 190, 255, 0.2);
+              font-size: 1.7rem;
+            }
+          }
+          @media screen and (max-width: 1300px) {
+            .active-item {
+              justify-content: center;
+              padding-bottom: 1.5rem;
+              padding-top: 1.5rem;
+              margin-top: 1.2rem;
+              margin-bottom: 1.2rem;
+              span {
+                font-size: 0px;
+              }
+              .icon {
+                color: white;
+                font-size: 2.5rem;
+              }
+            }
+          }
+          //active item end
+        }
+      }
+      @media screen and (max-width: 570px) {
+        .bar-items {
+          display: none;
+        }
+      }
+
+      //bar items end
+
+      //sidebar-footer start
+      .sidebar-footer {
+        box-sizing: border-box;
+        padding-top: 5rem;
+        padding-left: 2.1rem;
+        margin-top: auto;
+        background-color: #1d1c40;
+        width: 17.9rem;
+        height: 19rem;
+        border-radius: 1rem;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 4rem;
+        font-size: 1.4rem;
+        color: white;
+        line-height: 2.3rem;
+        img {
+          position: absolute;
+          width: 10.17rem;
+          bottom: 0;
+          right: 0;
+        }
+        span {
+          display: block;
+          font-weight: 600;
+        }
+      }
+      @media screen and (max-width: 1370px) {
+        .sidebar-footer {
+          width: 16.9rem;
+          height: 18rem;
+          padding-top: 4rem;
+          padding-left: 1.9rem;
+        }
+      }
+      @media screen and (max-width: 1300px) {
+        .sidebar-footer {
+          display: none;
+        }
+      }
+      //sidebar-footer end
+    }
+  }
+  @media screen and (max-width: 570px) {
+    .sidebar {
+      height: min-content;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@use "./colors" as *;
+@mixin commonStyle {
+  html {
+    /* 62.5% of 16px = 10px */
+    font-size: 62.5%;
+  }
+
+  body {
+    font-family: "Source Sans Pro", sans-serif;
+    background-color: $bodyColor;
+    overflow: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: $headline;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
